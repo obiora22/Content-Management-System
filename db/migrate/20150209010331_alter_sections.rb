@@ -1,8 +1,9 @@
 class AlterSections < ActiveRecord::Migration
   def up
-  	remove_index("sections","name")
+  	add_index("sections", "page_id")
+  	#add_index("sections","name")
   end
   def down
-    add_index("sections", "name")
+    #remove_index("sections", "name")
   end
 end

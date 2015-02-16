@@ -12,7 +12,8 @@ class CreateSections < ActiveRecord::Migration
      
     end
      add_index("sections","name")
-     add_foreign_key :sections, :pages	
+     
+     #add_foreign_key :sections, :pages	
   end
   def down
   	 drop_table :sections
