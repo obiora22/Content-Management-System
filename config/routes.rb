@@ -7,7 +7,7 @@ SimpleCms::Application.routes.draw do
   root 'demo#index'
   #get "demo/index" 
   #get 'demo/hello'
-  match ':controller(/:action(/:id))', :via => :get
+  match ':controller(/:action(/:id))', :via => [:get, :post]
   # match ':controller(/:action(/:id))', :via => :get ----> DEFAULT ROUTE
   # 
   # The priority is based upon order of creation: first created -> highest priority.
