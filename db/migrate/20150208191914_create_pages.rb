@@ -13,7 +13,7 @@ class CreatePages < ActiveRecord::Migration
     end
      add_index("pages","name")
     
-     add_foreign_key :pages, :subjects # Adds foriegn key constraint
+     #add_foreign_key :pages, :subjects # Adds foriegn key constraint
   end
 
   def down

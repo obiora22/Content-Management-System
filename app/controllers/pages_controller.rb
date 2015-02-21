@@ -1,4 +1,5 @@
 class PagesController < ApplicationController
+  
   def index
     @pages = Page.all
   end
@@ -26,7 +27,7 @@ class PagesController < ApplicationController
   def update
     @page = Page.find(params[:id])
     if @page.update_attributes(page_params)
-      flash[:notice] = "Your page was updated successfully."
+      flash[:notice] = "This page was updated successfully."
        redirect_to(:action => 'show',:id => @page.id)
     else
        render('edit')
@@ -40,13 +41,14 @@ class PagesController < ApplicationController
   def destroy
     @page = Page.find(params[:id])
     @page.destroy
-    flash[:notice] = "Subject '#{@page.name}' was destroyed successfully."
+    flash[:notice] = "This subject '#{@page.name}' was destroyed successfully."
     redirect_to(:action => 'index', :notice => "Page was successfully deleted.")
   end
 
   private
 
   def page_params
-    params.require(:page).permit(:name, :permalink, :position, :visible)
+    params.require(:page).permit(:name, :permalink, :position, :visible, :subject_id)
   end
+
 end

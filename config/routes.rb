@@ -18,7 +18,7 @@ SimpleCms::Application.routes.draw do
   # get "subjects/new"
   # get "subjects/edit"
   # get "subjects/delete"
-  root 'demo#index'
+  root 'subjects#index'
   #get "demo/index" 
   #get 'demo/hello'
   match ':controller(/:action(/:id))', :via => [:get, :post]

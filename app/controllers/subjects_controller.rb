@@ -1,9 +1,9 @@
 class SubjectsController < ApplicationController
 
-  layout false
+  #layout false
 
   def index
-    @subjects = Subject.sorted
+    @subjects = Subject.all
   end
 
   def show
