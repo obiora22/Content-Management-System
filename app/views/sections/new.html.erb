@@ -1,3 +1,4 @@
+<% @page_title = "New Section" %>
 <%= link_to("<< Back to List", {action: :index}, :class => 'back-link')%> 
 
 
@@ -20,6 +21,10 @@
   <tr>
   	<th>ContentType</th>
   	<td><%= f.text_field(:content_type)%></td>
+  </tr>
+  <tr>
+    <th>Content</th>
+    <td><%= f.text_field(:content)%></td>
   </tr>
    <tr>
     <th>PageId</th>

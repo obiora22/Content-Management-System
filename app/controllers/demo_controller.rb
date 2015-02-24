@@ -19,5 +19,8 @@ class DemoController < ApplicationController
   	def ign 
       redirect_to('http://ign.com')
   	end 
+    def greet
+      "I am the controller!"
+    end
 
 end

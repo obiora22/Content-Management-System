@@ -1,9 +1,6 @@
-<% if !flash[:notice].blank? %>
-  <div class="notice">
-  	<%= flash[:notice] %>
-  </div>
-  <% end %>
+<% @page_title = "Sections" %>
 <div class="sections index">
+    <% provide(:title,"Home Sections")%>
 	<h2>Section</h2>
 
 	<%= link_to("Add New Section", {action: :new}, :class => 'action new')%> 
@@ -15,7 +12,7 @@
 			<th>Visible</th>
 			<th>ContentType</th>
 			<th>Content</th>
-			<th>PageId</th>
+			<th>PageID</th>
 			<th>Actions</th>
 		</tr>
 		<% @sections.each do |section|%>

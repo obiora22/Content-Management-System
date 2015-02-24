@@ -1,8 +1,5 @@
-<% if !flash[:notice].blank? %>
-  <div class="notice">
-  	<%= flash[:notice] %>
-  </div>
-  <% end %>
+<% @page_title = "Pages" %>
+ <% provide(:title, "Home Pages")%>
 <div class="pages index">
 	<h2>Pages</h2>
 
@@ -15,6 +12,7 @@
 			<th>Position</th>
 			<th>Visible</th>
 			<th>SubjectId</th>
+			<th>PageID</th>
 			<th>Actions</th>
 		</tr>
 		<% @pages.each do |page|%>
@@ -24,6 +22,7 @@
 			<td><%= page.position %></td>
 			<td class="center"><%= page.visible ? 'Yes' : 'No' %></td>
 			<td class="center"><%= page.subject_id %></td>
+			<td class="center"><%= page.id %></td>
 			<td class="actions">
 				<%= link_to("Show", {action: :show, id: page.id}, :class => 'action show')%>
 				<%= link_to("Edit", {action: :edit, id: page.id}, :class => 'action edit')%>

@@ -1,6 +1,6 @@
 class SubjectsController < ApplicationController
 
-  #layout false
+  layout "admin"
 
   def index
     @subjects = Subject.all
@@ -28,7 +28,7 @@ class SubjectsController < ApplicationController
     @subject = Subject.find(params[:id])
     if @subject.update_attributes(subject_params)
     # if @subject.save
-      flash[:notice] = "Subject '#{subject.name}' was updated successfully."
+      flash[:notice] = "Subject '#{@subject.name}' was updated successfully."
       redirect_to(:action => 'show',:id => @subject.id)
     else
       render(:action => 'new')
